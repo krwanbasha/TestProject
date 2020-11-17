@@ -1,0 +1,6 @@
+pages\PageBase.class
+pages\RestaurantPage.class
+pages\SearchResultPage.class
+pages\OrderDetailsPage.class
+pages\DeliveryLocationPage.class
+pages\HomePage.class

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Exploratory Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="listeners.TestAllureListener"/>
+  </listeners>
+  <test thread-count="5" name="Exploratory Testing(failed)" verbose="0">
+    <classes>
+      <class name="tests.ChooseLocationTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="UserCanChooseDeliveryLocation"/>
+          <include name="stopDriver"/>
+          <include name="UserCanSearchForLocation"/>
+        </methods>
+      </class> <!-- tests.ChooseLocationTest -->
+      <class name="tests.CheckOutTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="UserCanChooseFromTopDishes"/>
+          <include name="stopDriver"/>
+          <include name="UserCanLoginToElmenus"/>
+          <include name="UserCanSearchforaRestaurant"/>
+          <include name="UserCanSelectOrderDetails"/>
+          <include name="UserCanChooseResult"/>
+        </methods>
+      </class> <!-- tests.CheckOutTest -->
+    </classes>
+  </test> <!-- Exploratory Testing(failed) -->
+</suite> <!-- Failed suite [Exploratory Suite] -->

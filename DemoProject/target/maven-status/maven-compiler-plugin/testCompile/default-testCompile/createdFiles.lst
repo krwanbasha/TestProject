@@ -1,0 +1,5 @@
+listeners\TestAllureListener.class
+utilities\Helper.class
+tests\CheckOutTest.class
+tests\TestBase.class
+tests\ChooseLocationTest.class

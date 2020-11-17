@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Exploratory Suite">
+	<parameter name="browser" value="chrome" />
+	<listeners>
+		<listener class-name="listeners.TestAllureListener" />
+	</listeners>
+	<test name="Exploratory Testing" preserve-order="false">
+		<classes>
+			<class name="tests.ChooseLocationTest" />
+			<class name="tests.CheckOutTest" />
+		</classes>
+	</test>
+</suite> 
