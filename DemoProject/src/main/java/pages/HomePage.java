@@ -47,6 +47,12 @@ public class HomePage extends PageBase
 	@FindBy(className = "clickable-anchor")
 	WebElement deliveryLink;
 	
+	//Sign out
+	@FindBy(xpath = "/html/body/div[3]/div[1]/header/div[1]/div[3]/div[3]/div[1]/div/ul/li[3]/button")
+	WebElement dropDownList;
+	@FindBy(xpath = "/html/body/div[3]/div[1]/header/div[1]/div[3]/div[3]/div[1]/div/ul/li[3]/ul/li[3]/button")
+	WebElement signOutBtn;
+	
 	@Step("Open login form")
 	public void openLoginForm()
 	{
@@ -75,6 +81,13 @@ public class HomePage extends PageBase
 	{
 		getText(deliveryLink);
 		clickButton(deliveryLink);
+	}
+
+	@Step("Sign out from the system")
+	public void signOut() {
+		clickButton(dropDownList);
+		waitUntil(signOutBtn);
+		clickButton(signOutBtn);
 	}
 	
 }

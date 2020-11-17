@@ -2,12 +2,8 @@ package tests;
 
 import static org.testng.Assert.assertTrue;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -99,5 +95,14 @@ public class CheckOutTest extends TestBase {
 	public void UserCanSelectOrderDetails() {
 		orderDetailsPage = new OrderDetailsPage(driver);
 		orderDetailsPage.addToBasket();
+	}
+	
+	@Severity(SeverityLevel.TRIVIAL)
+	@Description("Sign out from el menus")
+	@Story("Test verify checkout orders")
+	@Test(priority = 6, dependsOnMethods = "UserCanSelectOrderDetails")
+	public void UserCanSignOut() {
+		home = new HomePage(driver);
+		home.signOut();
 	}
 }
