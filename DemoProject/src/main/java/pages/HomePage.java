@@ -44,7 +44,7 @@ public class HomePage extends PageBase
 	WebElement goBtn;
 	
 	//Delivery section
-	@FindBy(xpath = "/html/body/div[3]/section[1]/div[2]/div/div/div[1]")
+	@FindBy(className = "clickable-anchor")
 	WebElement deliveryLink;
 	
 	@Step("Open login form")
@@ -73,6 +73,7 @@ public class HomePage extends PageBase
 	@Step("Open delevry location section")
 	public void moveToDeliverySection()
 	{
+		getText(deliveryLink);
 		clickButton(deliveryLink);
 	}
 	

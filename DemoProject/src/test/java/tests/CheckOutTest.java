@@ -2,8 +2,11 @@ package tests;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -50,6 +53,7 @@ public class CheckOutTest extends TestBase {
 		// while loop will be executed till the last value in CSV file .
 		while ((csvCell = reader.readNext()) != null) {
 			String email = csvCell[0];
+			email.replaceAll("[ï»¿]", "");
 			String password = csvCell[1];
 			String profileName = csvCell[2];
 			home = new HomePage(driver);

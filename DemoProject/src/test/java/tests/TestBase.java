@@ -37,6 +37,7 @@ public class TestBase
 	//Handling chrome browser
 	public static ChromeOptions chromeOption() {
 		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--allow-file-access-from-files");
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 		chromePrefs.put("profile.default.content_settings.popups", 0);
 		chromePrefs.put("download.default_directory", downloadPath);

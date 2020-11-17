@@ -28,9 +28,14 @@ public class DeliveryLocationPage extends PageBase {
 	@FindBy(xpath = "/html/body/div[3]/div[2]/div/div[3]/div[5]/div/ul/li[1]")
 	WebElement firstZoneLink;
 	
+	//city area
+	@FindBy(className = "zone-btn")
+	WebElement cityArea;
+	
 	@Step("Search for delivery location")
 	public void searchForDeliveryLocation()
 	{
+		clickButton(cityArea);
 		clickButton(firstAreaItem);
 		System.out.println("Area Name is: "+getText(firstAreaItem));
 		clickButton(firstZoneLink);

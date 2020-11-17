@@ -1,6 +1,7 @@
 package tests;
 
 import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -26,6 +27,7 @@ public class ChooseLocationTest extends TestBase {
 		home = new HomePage(driver);
 		home.moveToDeliverySection();
 		assertTrue(driver.getCurrentUrl().equals("https://www.elmenus.com/cairo/delivery"));
+		
 	}
 	
 	@Test(priority = 2, dependsOnMethods = "UserCanChooseDeliveryLocation")
@@ -35,6 +37,6 @@ public class ChooseLocationTest extends TestBase {
 	public void UserCanSearchForLocation() {
 		locationPage = new DeliveryLocationPage(driver);
 		locationPage.searchForDeliveryLocation();
-		assertTrue(driver.getCurrentUrl().contains("features-order-online"));
+		assertTrue(driver.getCurrentUrl().contains("delivery"));
 	}
 }
